@@ -9,14 +9,7 @@ export class DataService {
 
   getCourses() {
     return this.http.get('https://jsonplaceholder.typicode.com/todos')
-      .map(courses => courses.json())
-      .toPromise();
+      .map(data => data.json());
   }
 }
 
-// {
-//   "userId": 1,
-//   "id": 1,
-//   "title": "delectus aut autem",
-//   "completed": false
-// }

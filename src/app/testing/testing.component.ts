@@ -8,16 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestingComponent implements OnInit {
 
- courses = [];
+ courses: any;
 
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-
     this.dataService.getCourses()
-      .then((data) => {
-        this.courses = data
-      });
+    .subscribe(res => this.courses = res);
   }
-
 }
